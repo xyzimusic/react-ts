@@ -5,19 +5,20 @@ import {Rating} from "./components/Rating/Rating";
 import MyOnOff from "./components/OnOff/MyOnOff";
 import {OnOff} from "./components/OnOff/OnOff";
 import SelfControlledAccordion from './components/Accordion/SelfControlledAccordion';
+import {SelfControlledRating} from './components/Rating/SelfControlledRating';
 
 function App() {
     console.log('App rendering')
     return (
-        <div>
+        <div className='App'>
 
             <SelfControlledAccordion titleValue={'Menu'}/>
             {/*<Accordion titleValue={'Users'} collapsed={false}/>*/}
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <SelfControlledRating />
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
             {/*<MyOnOff on={true}></MyOnOff>*/}
             <OnOff ></OnOff>
             <OnOff ></OnOff>
