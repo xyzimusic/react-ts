@@ -1,11 +1,15 @@
-import React from "react";
+import React from 'react';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
+    value: RatingValueType
+    setRatingValue: (value: RatingValueType) => void
 }
 
 type StarPropsType = {
     selected: boolean
+    setRatingValue: (value: RatingValueType) => void
+    value: RatingValueType
 }
 
 export function Rating(props: RatingPropsType) {
@@ -13,84 +17,21 @@ export function Rating(props: RatingPropsType) {
 
     return (
         <div>
-            <Star selected={props.value>=0}/>
-            <Star selected={props.value>=1}/>
-            <Star selected={props.value>=2}/>
-            <Star selected={props.value>=3}/>
-            <Star selected={props.value>=4}/>
+            <Star selected={props.value > 0} setRatingValue={props.setRatingValue} value={1}/>
+            <Star selected={props.value > 1} setRatingValue={props.setRatingValue} value={2}/>
+            <Star selected={props.value > 2} setRatingValue={props.setRatingValue} value={3}/>
+            <Star selected={props.value > 3} setRatingValue={props.setRatingValue} value={4}/>
+            <Star selected={props.value > 4} setRatingValue={props.setRatingValue} value={5}/>
         </div>
     )
 
 
-    // if (props.value === 1) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     )
-    // }
-    // if (props.value === 2) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     )
-    // }
-    // if (props.value === 3) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     )
-    // }
-    // if (props.value === 4) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     )
-    // }
-    // if (props.value === 5) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //         </div>
-    //     )
-    // }
-    // return (
-    //     <div>
-    //         <Star selected={false}/>
-    //         <Star selected={false}/>
-    //         <Star selected={false}/>
-    //         <Star selected={false}/>
-    //         <Star selected={false}/>
-    //     </div>
-    // )
 }
 
 function Star(props: StarPropsType) {
 
+    return <span onClick={()=>{props.setRatingValue(props.value)}}>
+        {props.selected ? <b>star </b> : 'star '}
+    </span>
     // debugger
-    if (props.selected) return <span><b>star</b> </span>
-    else return <span>star </span>
 }
