@@ -2,6 +2,7 @@ import React, {ChangeEvent, useRef, useState} from 'react';
 import './App.css';
 import {RatingValueType} from './components/Rating/Rating';
 import Accordion from './components/Accordion/Accordion';
+import Select from './components/Select/Select';
 
 
 function App() {
@@ -19,19 +20,35 @@ function App() {
     const onClick = (value: any) => {
         console.log(value)
     }
+
+    const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <Accordion onClick={onClick}
-                       titleValue={'Menu'}
-                       collapsed={accordionCollapsed}
-                       onChange={callback}
-                       items={
-                           [
-                               {title: 'Dima', value: 1},
-                               {title: 'Artem', value: 2},
-                               {title: 'Viktor', value: 3}
-                           ]
-                       }></Accordion>
+            {/*<Accordion onClick={onClick}*/}
+            {/*           titleValue={'Menu'}*/}
+            {/*           collapsed={accordionCollapsed}*/}
+            {/*           onChange={callback}*/}
+            {/*           items={*/}
+            {/*               [*/}
+            {/*                   {title: 'Dima', value: 1},*/}
+            {/*                   {title: 'Artem', value: 2},*/}
+            {/*                   {title: 'Viktor', value: 3}*/}
+            {/*               ]*/}
+            {/*           }></Accordion>*/}
+
+            <Select
+                value={value}
+                items={
+                    [
+                        {title: 'Dima', value: '1'},
+                        {title: 'Artem', value: '2'},
+                        {title: 'Viktor', value: '3'}
+                    ]
+                }
+                onChange={(value:any) => {
+                    setValue(value)
+                }}
+            />
         </div>
     );
 }
