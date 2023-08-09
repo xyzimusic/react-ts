@@ -3,25 +3,26 @@ import styled from 'styled-components'
 
 type OnOffPropsType = {
     on: boolean
+    setOnOfButton:()=>void
 }
 
 const MyOnOff = (props: OnOffPropsType) => {
 
-    let [onOfButton, setOnOfButton] = useState<string>(props.on ? '#179c20' : '#9c172a')
+    // let [onOfButton, setOnOfButton] = useState<string>(props.on ? '#179c20' : '#9c172a')
 
-    function onButtonHandler() {
-        setOnOfButton('#179c20')
-    }
-
-    function offButtonHandler() {
-        setOnOfButton('#9c172a')
-    }
+    // function onButtonHandler() {
+    //     props.setOnOfButton()
+    // }
+    //
+    // function offButtonHandler() {
+    //     setOnOfButton('#9c172a')
+    // }
 
     return (
         <div>
-            <OnButton testProps={onOfButton} onClick={onButtonHandler}>On</OnButton>
-            <OfButton testProps={onOfButton} onClick={offButtonHandler}>Of</OfButton>
-            <Bulb color={onOfButton}></Bulb>
+            <OnButton testProps={props.on ? '#179c20' : '#9c172a'} onClick={props.setOnOfButton}>On</OnButton>
+            <OfButton testProps={props.on ? '#179c20' : '#9c172a'} onClick={props.setOnOfButton}>Of</OfButton>
+            <Bulb color={props.on ? '#179c20' : '#9c172a'}></Bulb>
 
             {/*<OnButton color={onOfButton=='#179c20'?'#179c20':'#fafbf2'} onClick={onButtonHandler}>On</OnButton>*/}
             {/*<OfButton color={onOfButton == '#9c172a' ? '#9c172a' : '#fafbf2'} onClick={offButtonHandler}>Of</OfButton>*/}
@@ -36,15 +37,7 @@ type DefaultProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, H
 type BulbPropsType = DefaultProps & {
     testProps: string
 }
-// type BulbPropsType = Omit<DefaultProps, 'type'> & {
-//     testProps: boolean
-// }
 
-// const OnButton = styled.button`
-//   margin: 5px;
-//   padding: 10px;
-//   background-color: ${props => props.color};
-// `
 const OnButton = styled.button<BulbPropsType>`
   margin: 5px;
   padding: 10px;

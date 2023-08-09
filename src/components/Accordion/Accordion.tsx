@@ -2,14 +2,14 @@ import React from 'react';
 
 type AccordionPropsType = {
     titleValue: string
-    collapsed: boolean
-    setAccordionCollapsed:(collapsed:boolean)=>void
+    collapsed:boolean
+    onChange:()=>void
 }
 
 const Accordion = (props: AccordionPropsType) => {
     return (
         <>
-            <AccordionTitle title={props.titleValue} setAccordionCollapsed={props.setAccordionCollapsed} collapsed={props.collapsed}/>
+            <AccordionTitle title={props.titleValue} onChange={props.onChange}/>
             {!props.collapsed &&  <AccordionBody/>}
         </>
     )
@@ -17,14 +17,13 @@ const Accordion = (props: AccordionPropsType) => {
 
 type AccordionTitlePropsType = {
     title: string
-    setAccordionCollapsed:(collapsed:boolean)=>void
-    collapsed: boolean
+    onChange:()=>void
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) => {
     console.log('AccordionTitle rendering')
     return (
-        <h3 onClick={()=>{props.setAccordionCollapsed(!props.collapsed)}}>--{props.title}--</h3>
+        <h3 onClick={props.onChange}>--{props.title}--</h3>
     )
 };
 
