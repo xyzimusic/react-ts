@@ -4,6 +4,7 @@ import {RatingValueType} from './components/Rating/Rating';
 import Accordion from './components/Accordion/Accordion';
 import Select from './components/Select/Select';
 import SelfControlledAccordion from './components/Accordion/SelfControlledAccordion';
+import {Example} from './components/memo/ReactMemo';
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>
+            <Example></Example>
+            {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
             {/*           collapsed={accordionCollapsed}*/}
