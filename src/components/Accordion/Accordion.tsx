@@ -13,7 +13,9 @@ export type ItemType = {
     value:any
 }
 
-const Accordion = (props: AccordionPropsType) => {
+
+const
+    Accordion = (props: AccordionPropsType) => {
     return (
         <>
             <AccordionTitle title={props.titleValue} onChange={props.onChange}/>

@@ -3,12 +3,13 @@ import './App.css';
 import {RatingValueType} from './components/Rating/Rating';
 import Accordion from './components/Accordion/Accordion';
 import Select from './components/Select/Select';
+import SelfControlledAccordion from './components/Accordion/SelfControlledAccordion';
 
 
 function App() {
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(3)
+    // let [ratingValue, setRatingValue] = useState<RatingValueType>(3)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [on, setOn] = useState<boolean>(false)
+    // let [on, setOn] = useState<boolean>(false)
 
 
     const callback = () => {
@@ -24,6 +25,7 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
+            <SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
             {/*           collapsed={accordionCollapsed}*/}
@@ -36,19 +38,19 @@ function App() {
             {/*               ]*/}
             {/*           }></Accordion>*/}
 
-            <Select
-                value={value}
-                items={
-                    [
-                        {title: 'Dima', value: '1'},
-                        {title: 'Artem', value: '2'},
-                        {title: 'Viktor', value: '3'}
-                    ]
-                }
-                onChange={(value:any) => {
-                    setValue(value)
-                }}
-            />
+            {/*<Select*/}
+            {/*    value={value}*/}
+            {/*    items={*/}
+            {/*        [*/}
+            {/*            {title: 'Dima', value: '1'},*/}
+            {/*            {title: 'Artem', value: '2'},*/}
+            {/*            {title: 'Viktor', value: '3'}*/}
+            {/*        ]*/}
+            {/*    }*/}
+            {/*    onChange={(value:any) => {*/}
+            {/*        setValue(value)*/}
+            {/*    }}*/}
+            {/*/>*/}
         </div>
     );
 }

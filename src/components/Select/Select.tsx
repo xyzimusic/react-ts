@@ -11,8 +11,12 @@ type SelectPropsType = {
     items: ItemType[]
 }
 const Select = (props: SelectPropsType) => {
+
+
     const [active, setActive] = useState(true)
     const [hoveredElementValue, sethoveredElementValue] = useState(props.value)
+
+
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
     const showItems = () => {
