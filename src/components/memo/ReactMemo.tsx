@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 
 export const NewMessagesCounter = (props:any) =>{
@@ -15,19 +15,23 @@ export const UsersSecter = (props: {users:Array<string>}) =>{
 
 const Users = React.memo(UsersSecter)
 
-export const Example =() =>{
-
+export const ExampleHelpsToReactMemo =() =>{
+    console.log(`HelpForReactMemo`)
     const [counter,setCounter] = useState(0)
     const [users,setUsers] = useState(['Dima','Bimo','Kino'])
 
+
+    const newArray = useMemo(()=>{
+      return   users.filter(u=>u.indexOf('a')>-1)
+    },[users])
     return(
         <>
             <button onClick={()=>{
                 setCounter(counter+1)
             }}>FFFF+</button>
-            <NewMessagesCounter count={counter}></NewMessagesCounter>
+            {counter}
 
-            <Users users={users}></Users>
+            <Users users={ newArray}></Users>
         </>
 
     )
