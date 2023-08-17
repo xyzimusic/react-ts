@@ -4,7 +4,7 @@ import {RatingValueType} from './components/Rating/Rating';
 import Accordion from './components/Accordion/Accordion';
 import Select from './components/Select/Select';
 import SelfControlledAccordion from './components/Accordion/SelfControlledAccordion';
-import { ExampleHelpsToReactMemo} from './components/memo/ReactMemo';
+import {ExampleHelpsToReactMemo, LikeUseCallback} from './components/memo/ReactMemo';
 import {HelpForReactMemo} from './components/memo/UseMemoMy';
 
 
@@ -27,7 +27,7 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <ExampleHelpsToReactMemo></ExampleHelpsToReactMemo>
+            <LikeUseCallback></LikeUseCallback>
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
