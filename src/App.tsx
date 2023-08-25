@@ -7,6 +7,7 @@ import SelfControlledAccordion from './components/Accordion/SelfControlledAccord
 import {ExampleHelpsToReactMemo, LikeUseCallback} from './components/memo/ReactMemo';
 import {HelpForReactMemo} from './components/memo/UseMemoMy';
 import {Example1} from './components/memo/ReactMemoUseState';
+import {UseEffect} from './components/UseEffect';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <Example1></Example1>
+            <UseEffect></UseEffect>
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
