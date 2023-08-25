@@ -6,6 +6,7 @@ import Select from './components/Select/Select';
 import SelfControlledAccordion from './components/Accordion/SelfControlledAccordion';
 import {ExampleHelpsToReactMemo, LikeUseCallback} from './components/memo/ReactMemo';
 import {HelpForReactMemo} from './components/memo/UseMemoMy';
+import {Example1} from './components/memo/ReactMemoUseState';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <LikeUseCallback></LikeUseCallback>
+            <Example1></Example1>
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
