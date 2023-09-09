@@ -30,7 +30,7 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <Clock></Clock>
+            <Clock mode={'analog'}></Clock>
             {/*<UseEffect></UseEffect>*/}
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
