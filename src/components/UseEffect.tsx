@@ -39,7 +39,7 @@ export const SetTimeoutExample = () => {
         // })
 
         setInterval(()=>{
-            setCounter((state)=>state+1))
+            setCounter((state)=>(state+1))
         })
 
 

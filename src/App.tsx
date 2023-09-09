@@ -8,6 +8,7 @@ import {ExampleHelpsToReactMemo, LikeUseCallback} from './components/memo/ReactM
 import {HelpForReactMemo} from './components/memo/UseMemoMy';
 import {Example1} from './components/memo/ReactMemoUseState';
 import {UseEffect} from './components/UseEffect';
+import {Clock} from './components/Clock/Clock';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <UseEffect></UseEffect>
+            <Clock></Clock>
+            {/*<UseEffect></UseEffect>*/}
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
             {/*           titleValue={'Menu'}*/}
