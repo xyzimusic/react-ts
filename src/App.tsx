@@ -7,7 +7,7 @@ import SelfControlledAccordion from './components/Accordion/SelfControlledAccord
 import {ExampleHelpsToReactMemo, LikeUseCallback} from './components/memo/ReactMemo';
 import {HelpForReactMemo} from './components/memo/UseMemoMy';
 import {Example1} from './components/memo/ReactMemoUseState';
-import {UseEffect} from './components/UseEffect';
+import {KeysTrackerExample, UseEffect} from './components/UseEffect';
 import {Clock} from './components/Clock/Clock';
 
 
@@ -30,7 +30,8 @@ function App() {
     const [value,setValue] = useState('2')
     return (
         <div className="App">
-            <Clock mode={'analog'}></Clock>
+            <KeysTrackerExample></KeysTrackerExample>
+            {/*<Clock mode={'analog'}></Clock>*/}
             {/*<UseEffect></UseEffect>*/}
             {/*<SelfControlledAccordion titleValue={'3123123'}></SelfControlledAccordion>*/}
             {/*<Accordion onClick={onClick}*/}
